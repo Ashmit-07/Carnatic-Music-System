@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sruthi - Frontend</title>
+    <!-- Tailwind CDN (config below) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#775a19',
+              'primary-container': '#c5a059',
+              surface: '#fff8f5',
+              'surface-container': '#fcebe1',
+              'on-surface': '#221a14',
+              'on-surface-variant': '#4e4639',
+              outline: '#7f7667'
+            },
+            spacing: {
+              'container-max': '1200px'
+            },
+            fontFamily: {
+              body: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['Playfair Display', 'serif']
+            }
+          }
+        }
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="antialiased bg-surface font-body text-on-surface">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
