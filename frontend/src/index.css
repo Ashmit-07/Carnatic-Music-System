@@ -1,14 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
 
-/* Minimal reset */
-:root{--container-max:1200px}
-html,body,#root{height:100%}
-body{margin:0}
+:root {
+  --container-max: 1200px;
+  --bg: #f3efe9;
+  --surface: #f4f1ec;
+  --surface-container: #efe9e2;
+  --primary: #a87c44;
+  --primary-container: #d8b77a;
+  --secondary: #8e7a68;
+  --text: #201c1a;
+  --muted: #5c514c;
+  --outline: rgba(32, 28, 26, 0.08);
+}
 
-/* Keep existing neumorphic shadows as utility classes used inline in the original design */
-.shadow-neu-inset { box-shadow: inset 4px 4px 8px #D1CDC1, inset -4px -4px 8px #FFFFFF }
-.shadow-neu { box-shadow: -8px -8px 16px #FFFFFF, 8px 8px 16px #D1CDC1 }
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f6f2ee 0%, #efe8e0 100%);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-/* Small helper for preserve original font mapping */
-.font-display { font-family: 'Playfair Display', serif }
-.font-body { font-family: 'Inter', system-ui, sans-serif }
+button, input, a {
+  transition: all 180ms ease;
+}
+
+img { display: block; max-width: 100%; }
+
+.shadow-neu-inset {
+  box-shadow: inset 6px 6px 12px rgba(171, 162, 151, 0.32), inset -6px -6px 12px rgba(255,255,255,0.8);
+}
+
+.shadow-neu {
+  box-shadow: -10px -10px 20px rgba(255,255,255,0.85), 10px 10px 20px rgba(178,166,151,0.28);
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-body { font-family: 'Inter', system-ui, sans-serif; }
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: normal;
+  display: inline-block;
+  white-space: nowrap;
+}

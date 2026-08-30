@@ -1,33 +1,97 @@
-Sruthi — React frontend + Flask backend conversion
+# Sruthi — Carnatic Music System
 
-For the actual local startup steps, see RUN_GUIDE.md.
+This project is being built as a simple website with three main areas:
 
-What I changed/added:
+1. Learning
+2. Compose
+3. Instruments
 
-frontend/
-- index.html — Vite-style entry that includes Tailwind CDN and font imports
-- package.json — minimal scripts for vite
-- src/main.jsx — React entry
-- src/index.css — small helper styles and font import
-- src/App.jsx — app shell with client-side navigation state
-- src/components/Header.jsx, Footer.jsx — header and footer converted from HTML
-- src/pages/Home.jsx, Learn.jsx, Compose.jsx, Instruments.jsx — converted pages as React components. Compose uses fetch to save/load compositions from the backend.
+The current version is an early working prototype. The learning section is intentionally left empty for now, and the compose/instruments sections are still in the research and design phase.
 
-backend/
-- app.py — Flask app exposing /api/status and /api/compositions (GET, POST)
-- database.py — SQLite helper and schema
-- requirements.txt — backend python deps
+Important: Update this file after each feature added.
 
-Notes on styling & functionality:
-- Tailwind is included via CDN in index.html and configured there so the same class-based approach is used.
-- Interactive behaviors (play/pause, fret click ripple) are implemented with React state and lightweight handlers.
-- Compositions are persisted in SQLite (backend/sruthi.db) when the Save button is used.
+## What is done so far
 
-Development behavior:
-- The frontend currently points directly to the backend with http://127.0.0.1:5000 for simple local development.
-- The Flask backend also includes CORS headers so the React app on http://localhost:5173 can talk to it during local development.
+### Frontend
+- Converted the original mock/static website into a beginner-friendly React + Tailwind frontend.
+- Kept the same visual style and layout as closely as possible.
+- Created a simple page-based navigation system:
+  - Home
+  - Learn
+  - Compose
+  - Instruments
+- Added working interactive elements for the main buttons and state changes.
+- Kept the project structure simple and easy to understand.
 
-How the frontend communicates with the backend
-- GET /api/compositions — returns saved compositions
-- POST /api/compositions — save a composition with JSON {name, content}
-- GET /api/status — simple health/status check
+### Backend
+- Set up a minimal Flask backend.
+- Added a simple SQLite database layer for saved compositions.
+- Added API endpoints for basic functionality:
+  - health/status check
+  - save and load compositions
+- Added CORS support for local React-to-Flask development.
+
+### Project files
+- frontend/
+  - src/App.jsx
+  - src/main.jsx
+  - src/pages/Home.jsx
+  - src/pages/Learn.jsx
+  - src/pages/Compose.jsx
+  - src/pages/Instruments.jsx
+  - src/components/Header.jsx
+  - src/components/Footer.jsx
+- backend/
+  - app.py
+  - database.py
+  - requirements.txt
+- run guide and docs
+  - RUN_GUIDE.md
+  - README.md
+
+## What is still to be done
+
+### 1. Learning section
+- This part remains empty for now as requested.
+- Later, we will add structured lesson cards, lesson pages, and progression tracking.
+- Lessons will be added one by one after the core product structure is stable.
+
+### 2. Compose section
+- This area is only a basic prototype for now.
+- The actual music-sheet composition workflow still needs deeper research.
+- Future work may include:
+  - note selection and melody building
+  - raga/tala logic
+  - saving richer composition data
+  - timeline or notation-inspired layout
+
+### 3. Instruments section
+- This section is also a placeholder for future research.
+- Later, we will define which instruments are included and what behavior each one should have.
+- Possible future work:
+  - instrument-specific controls
+  - audio playback or simulation
+  - visual instrument interaction
+
+### 4. Cleanup and improvements
+- Review the app for polish and consistency.
+- Improve the empty states and placeholder screens.
+- Add more realistic functionality once the product direction is clearer.
+- Improve documentation as features are added.
+
+## Current status
+
+This is still a foundation project, not a final product. The core app structure, UI conversion, and basic backend connection are working, but the major feature areas (lessons, real composition features, instruments) are intentionally left for future development.
+
+## Local startup
+
+For the setup and run instructions, see [RUN_GUIDE.md](RUN_GUIDE.md).
+
+## Notes
+- The frontend and backend are kept separate for clarity.
+- SQLite is used only where needed, mainly for saved compositions.
+- The project intentionally avoids unnecessary complexity and extra libraries.
+
+## Update policy
+
+Update this file after each feature added.
