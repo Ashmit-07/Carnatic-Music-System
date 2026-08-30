@@ -1,4 +1,5 @@
 import React from 'react'
+import Icon from './Icon'
 
 export default function Footer(){
   return (
@@ -10,9 +11,9 @@ export default function Footer(){
             <p className="text-sm text-on-surface-variant">Explore the Soul of Carnatic Music</p>
           </div>
           <div className="flex gap-6">
-            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">music_note</span></a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">library_music</span></a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">share</span></a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#"><Icon name="music-note" className="h-5 w-5" /></a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#"><Icon name="library-music" className="h-5 w-5" /></a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#"><Icon name="share" className="h-5 w-5" /></a>
           </div>
         </div>
         <div className="flex flex-wrap justify-center md:justify-start gap-4 text-on-surface-variant text-sm pt-4 border-t border-outline">

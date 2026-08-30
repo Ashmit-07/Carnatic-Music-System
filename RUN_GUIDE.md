@@ -7,7 +7,7 @@ This guide explains how to start the React frontend and Flask backend locally on
 Open PowerShell and run:
 
 ```powershell
-cd C:\Users\ashmi\OneDrive\Desktop\Programming\Capstone\Carnatic Music System\backend
+cd backend
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
@@ -34,7 +34,7 @@ Expected response:
 Open a second PowerShell window and run:
 
 ```powershell
-cd C:\Users\ashmi\OneDrive\Desktop\Programming\Capstone\Carnatic Music System\frontend
+cd frontend
 npm install
 npm run dev
 ```
