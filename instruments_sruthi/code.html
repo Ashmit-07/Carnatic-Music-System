@@ -5,33 +5,26 @@
 <div class="flex flex-col gap-sm items-center text-center">
 <h1 class="font-display-lg text-display-lg text-primary">Sacred Instruments</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-        Experience the tactile resonance of Carnatic music. Select an instrument to explore its structure, tonal qualities, and interactive fretboard.
+        Explore three essential Carnatic instruments: the Tanpura drone, the Harmonium keyboard, and Mridangam rhythms.
       </p>
 </div>
 <!-- Selection Area: Large Tactile Buttons -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-lg">
-<!-- Veena Button (Active State) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Tanpura Button (Active State) -->
 <button class="relative group flex flex-col items-center justify-center p-md rounded-xl bg-surface-container transition-all duration-300 shadow-[inset_4px_4px_8px_#D1CDC1,inset_-4px_-4px_8px_#FFFFFF]">
 <div class="w-16 h-16 rounded-full mb-sm flex items-center justify-center bg-primary-container shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1]">
 <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">music_note</span>
 </div>
-<span class="font-title-md text-title-md text-primary">Veena</span>
+<span class="font-title-md text-title-md text-primary">Tanpura</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant mt-xs uppercase tracking-widest">Active</span>
 </button>
-<!-- Violin Button (Default State) -->
-<button class="relative group flex flex-col items-center justify-center p-md rounded-xl bg-surface transition-all duration-300 shadow-[-8px_-8px_16px_#FFFFFF,8px_8px_16px_#D1CDC1] hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1]">
+<!-- Harmonium Button (Default State) -->
+<a href="../harmonium_companion/index.html" class="relative group flex flex-col items-center justify-center p-md rounded-xl bg-surface transition-all duration-300 shadow-[-8px_-8px_16px_#FFFFFF,8px_8px_16px_#D1CDC1] hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] no-underline" aria-label="Open the Harmonium Companion">
 <div class="w-16 h-16 rounded-full mb-sm flex items-center justify-center bg-surface-container-high shadow-[inset_4px_4px_8px_#D1CDC1,inset_-4px_-4px_8px_#FFFFFF] group-hover:shadow-[inset_2px_2px_4px_#D1CDC1,inset_-2px_-2px_4px_#FFFFFF] transition-all">
 <span class="material-symbols-outlined text-on-surface-variant">music_note</span>
 </div>
-<span class="font-title-md text-title-md text-on-surface">Violin</span>
-</button>
-<!-- Flute Button (Default State) -->
-<button class="relative group flex flex-col items-center justify-center p-md rounded-xl bg-surface transition-all duration-300 shadow-[-8px_-8px_16px_#FFFFFF,8px_8px_16px_#D1CDC1] hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1]">
-<div class="w-16 h-16 rounded-full mb-sm flex items-center justify-center bg-surface-container-high shadow-[inset_4px_4px_8px_#D1CDC1,inset_-4px_-4px_8px_#FFFFFF] group-hover:shadow-[inset_2px_2px_4px_#D1CDC1,inset_-2px_-2px_4px_#FFFFFF] transition-all">
-<span class="material-symbols-outlined text-on-surface-variant">music_note</span>
-</div>
-<span class="font-title-md text-title-md text-on-surface">Flute</span>
-</button>
+<span class="font-title-md text-title-md text-on-surface">Harmonium</span>
+</a>
 <!-- Mridangam Button (Default State) -->
 <button class="relative group flex flex-col items-center justify-center p-md rounded-xl bg-surface transition-all duration-300 shadow-[-8px_-8px_16px_#FFFFFF,8px_8px_16px_#D1CDC1] hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1]">
 <div class="w-16 h-16 rounded-full mb-sm flex items-center justify-center bg-surface-container-high shadow-[inset_4px_4px_8px_#D1CDC1,inset_-4px_-4px_8px_#FFFFFF] group-hover:shadow-[inset_2px_2px_4px_#D1CDC1,inset_-2px_-2px_4px_#FFFFFF] transition-all">
@@ -40,18 +33,18 @@
 <span class="font-title-md text-title-md text-on-surface">Mridangam</span>
 </button>
 </div>
-<!-- Main Content: Interactive Veena Interface -->
+<!-- Main Content: Interactive Tanpura Interface -->
 <div class="flex flex-col lg:flex-row gap-xl items-start mt-md">
-<!-- Veena Illustration & Interaction Area -->
+<!-- Tanpura String Interaction Area -->
 <div class="flex-1 w-full flex flex-col items-center bg-surface-container-low rounded-3xl p-xl shadow-[-8px_-8px_16px_#FFFFFF,8px_8px_16px_#D1CDC1]">
 <div class="relative w-full h-[600px] bg-surface rounded-2xl shadow-[inset_8px_8px_16px_#D1CDC1,inset_-8px_-8px_16px_#FFFFFF] overflow-hidden flex items-center justify-center">
-<!-- Placeholder for Veena Illustration -->
-<div class="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-80 mix-blend-multiply" data-alt="A highly detailed, photorealistic top-down illustration of a traditional Saraswati Veena carved from rich sandalwood and ivory. The instrument is laid flat against a soft, warm clay-colored background. The frets are clearly visible, metallic and slightly raised. The lighting is soft and directional from the top-left, casting gentle neumorphic shadows that emphasize the tactile, sculpted nature of the instrument." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvoPOZHT6tb33A50mOnorVEMyVLBpr7zJE3O8LLi_01HIz8siGUxJO73awp4lHClYcwBnPHHdbXDWo0YGSKl52XwV1yO4zN_5YfYQDk69_sZkprf_hNnDDap39JzrMOeqjTXp5bxAFfxHRP49MjOBGu6_e0G-C17j1aMSDTB4O-4HlazLtQxYToMmLNQpH-U7BmNNjHdnInJA21wgu8iPKDz8wRdnd5VDvybVsVHYvYiM5zHqdkM8o_A')"></div>
-<!-- Interactive Fret Overlay (Simplified representation) -->
-<div class="absolute w-[80%] h-[120px] top-1/2 -translate-y-1/2 flex items-center justify-between px-md">
-<!-- Frets (Clickable) -->
+<!-- Tanpura string interaction backdrop -->
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low via-surface to-primary-fixed opacity-60" aria-hidden="true"></div>
+<!-- Interactive Tanpura Strings (Simplified representation) -->
+<div class="absolute w-[75%] h-[240px] top-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-12 px-md">
+<!-- Pluckable strings: Pa, Sa, Sa, Sa -->
 <script>
-              function triggerFret(btn) {
+              function triggerString(btn) {
                 // Visual feedback
                 btn.classList.add('shadow-[inset_4px_4px_8px_#D1CDC1,inset_-4px_-4px_8px_#FFFFFF]', 'bg-primary-container');
                 btn.classList.remove('shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1]', 'bg-surface-container-highest');
@@ -68,14 +61,10 @@
                 }, 300);
               }
             </script>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
-<button class="w-4 h-16 bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerFret(this)"></button>
+<button aria-label="Pluck Pa string" class="h-1 w-full bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerString(this)"></button>
+<button aria-label="Pluck first Sa string" class="h-1 w-full bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerString(this)"></button>
+<button aria-label="Pluck second Sa string" class="h-1 w-full bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerString(this)"></button>
+<button aria-label="Pluck third Sa string" class="h-1 w-full bg-surface-container-highest rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#D1CDC1] transition-all relative" onclick="triggerString(this)"></button>
 </div>
 </div>
 </div>
@@ -84,7 +73,7 @@
 <div class="bg-surface rounded-2xl p-lg shadow-[-8px_-8px_16px_#FFFFFF,8px_8px_16px_#D1CDC1] flex flex-col gap-md">
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Session Controls</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">
-            Record your interactions or play pre-recorded classic melodies to observe fret placement.
+            Tune the drone strings and practice their open-string pitches.
           </p>
 <!-- Playback Controls -->
 <div class="flex items-center justify-center gap-md py-md">
