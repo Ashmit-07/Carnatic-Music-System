@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="theme-color" content="#fff8f5">
+      <title>Harmonium | Sruthi</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div id="overlay">
+         <div id="overlay-content">
+            <div id="overlay-title">
+               <span class="title-small">Sruthi · Carnatic Music System</span>
+               <span class="title-large">Harmonium Companion</span>
+            </div>
+            <p class="welcome-copy">Explore ragas and play Carnatic swaras with the harmonium. Use your computer keyboard, the on-screen keys, or a MIDI instrument.</p>
+            <table id="controls-table">
+               <thead>
+                  <tr>
+                     <th>Action</th>
+                     <th>Input</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Play notes</td>
+                     <td>Computer keyboard or MIDI</td>
+                  </tr>
+                  <tr>
+                     <td>Pump bellows</td>
+                     <td>Spacebar in manual mode</td>
+                  </tr>
+                  <tr>
+                     <td>Hold notes</td>
+                     <td>Hold Shift</td>
+                  </tr>
+                  <tr>
+                     <td>Scroll keyboard</td>
+                     <td>Right-click and drag</td>
+                  </tr>
+                  <tr>
+                     <td>Filter raga notes</td>
+                     <td>Select a raga, then click its name</td>
+                  </tr>
+               </tbody>
+            </table>
+            <button id="start-btn" type="button">Start playing</button>
+            <div id="overlay-copyright">Harmonium Companion · Part of Sruthi</div>
+         </div>
+      </div>
+
+      <div class="app-root">
+         <header class="site-header">
+            <a class="site-brand" href="../home_sruthi/code.html" aria-label="Sruthi home">
+               <span class="brand-mark material-symbols-outlined" aria-hidden="true">graphic_eq</span>
+               <span class="brand-name">Sruthi</span>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+               <a href="../home_sruthi/code.html">Home</a>
+               <a href="../learn_sruthi/code.html">Learn</a>
+               <a href="../compose_sruthi/code.html">Compose</a>
+               <a class="active" href="../instruments_sruthi/code.html" aria-current="page">Instruments</a>
+            </nav>
+            <a class="back-link" href="../instruments_sruthi/code.html">
+               <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+               <span>All instruments</span>
+            </a>
+         </header>
+
+         <main class="page-shell">
+            <section class="page-heading">
+               <div>
+                  <p class="eyebrow">INSTRUMENTS · MELODIC</p>
+                  <h1>Harmonium <span>Companion</span></h1>
+                  <p class="page-description">Find your sruthi, explore a raga, and let every note settle into place.</p>
+               </div>
+               <div class="playing-hint">
+                  <span class="material-symbols-outlined" aria-hidden="true">piano</span>
+                  <span>Keyboard, computer keys or MIDI</span>
+               </div>
+            </section>
+
+            <div class="workspace-grid">
+               <section class="workspace-main" aria-label="Harmonium keyboard">
+                  <section class="surface-card performance-card">
+                     <div class="card-heading">
+                        <div>
+                           <p class="eyebrow">YOUR INSTRUMENT</p>
+                           <h2>Set your sound</h2>
+                        </div>
+                        <span class="status-pill"><span></span>Ready to play</span>
+                     </div>
+
+                     <div class="sound-stage">
+                        <div class="sound-stage-top">
+                           <div class="instrument-emblem material-symbols-outlined" aria-hidden="true">piano</div>
+                           <div class="sound-stage-copy">
+                              <span class="stage-kicker">HARMONIUM</span>
+                              <h3>Made for melody</h3>
+                              <p>Choose a raga or explore the full chromatic scale.</p>
+                           </div>
+                        </div>
+                        <div class="raga-display-overlay">
+                           <span class="raga-caption">Raga selection</span>
+                           <div class="raga-stepper">
+                              <button class="stepper-btn stepper-left" type="button" aria-label="Previous raga"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button>
+                              <span id="current-raga-name" class="raga-name-display" title="Click to restrict the keyboard to this raga">Chromatic</span>
+                              <button class="stepper-btn stepper-right" type="button" aria-label="Next raga"><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button>
+                           </div>
+                           <span class="raga-help">Click the raga name to highlight its notes</span>
+                        </div>
+                        <canvas id="visualizer-canvas" width="1000" height="140" aria-label="Audio waveform"></canvas>
+                        <div class="sound-stage-footer">
+                           <div class="bellows-row" id="pump-area">
+                              <div class="switch-group">
+                                 <span class="toggle-label">Auto bellows</span>
+                                 <label class="switch" aria-label="Enable manual bellows">
+                                    <input type="checkbox" id="manual-toggle">
+                                    <span class="slider-pump"></span>
+                                 </label>
+                              </div>
+                              <div class="meter-container" id="meter-ui" style="display: none;" aria-label="Bellows air level">
+                                 <div id="air-fill"></div>
+                              </div>
+                           </div>
+                           <div class="sruthi-control">
+                              <span class="toggle-label">Transpose</span>
+                              <div class="transpose-group">
+                                 <button class="trans-btn trans-left" type="button" aria-label="Transpose down">−</button>
+                                 <span class="trans-val" id="trans-display">T</span>
+                                 <button class="trans-btn trans-right" type="button" aria-label="Transpose up">+</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="keyboard-toolbar">
+                        <div class="notation-container">
+                           <div class="switch-group">
+                              <span class="toggle-label">Western</span>
+                              <label class="switch" aria-label="Switch to Indian swara notation">
+                                 <input type="checkbox" id="notation-checkbox">
+                                 <span class="slider-pump"></span>
+                              </label>
+                              <span class="toggle-label">Sargam</span>
+                           </div>
+                        </div>
+                        <div class="octave-control">
+                           <span class="toggle-label">OCTAVE</span>
+                           <div class="octave-led-bar" aria-label="Select keyboard octave">
+                              <button class="oct-unit" type="button" data-octave="-1" aria-label="Lower octave"><span class="oct-led" id="oct-low"></span><span class="octave-label">Low</span></button>
+                              <button class="oct-unit" type="button" data-octave="0" aria-label="Middle octave"><span class="oct-led active" id="oct-mid"></span><span class="octave-label">Middle</span></button>
+                              <button class="oct-unit" type="button" data-octave="1" aria-label="Upper octave"><span class="oct-led" id="oct-high"></span><span class="octave-label">High</span></button>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="keyboard-wrapper" aria-label="Scrollable harmonium keyboard">
+                        <div id="keyboard" class="keyboard"></div>
+                     </div>
+                     <p class="keyboard-caption">Select a key or use the home row on your keyboard. Right-click and drag to explore more notes.</p>
+                  </section>
+               </section>
+
+               <aside class="workspace-sidebar">
+                  <section class="surface-card settings-card">
+                     <div class="card-heading">
+                        <div>
+                           <p class="eyebrow">PERSONALIZE</p>
+                           <h2>Sound settings</h2>
+                        </div>
+                        <span class="settings-icon material-symbols-outlined" aria-hidden="true">tune</span>
+                     </div>
+                     <div class="controls-grid">
+                        <label class="knob-container" for="vol">
+                           <span class="knob__label">Volume</span>
+                           <input type="range" id="vol" min="0" max="1" step="0.001" value="0.8">
+                        </label>
+                        <label class="knob-container" for="sus">
+                           <span class="knob__label">Sustain</span>
+                           <input type="range" id="sus" min="0.05" max="2" step="0.1" value="0">
+                        </label>
+                        <label class="knob-container" for="chorus-slider">
+                           <span class="knob__label">Chorus</span>
+                           <input type="range" id="chorus-slider" min="0" max="0.2" step="0.01" value="0">
+                        </label>
+                        <label class="knob-container" for="rev">
+                           <span class="knob__label">Reverb</span>
+                           <input type="range" id="rev" min="0" max="1" step="0.01" value="0">
+                        </label>
+                     </div>
+                  </section>
+
+                  <section class="surface-card playing-card">
+                     <p class="eyebrow">PLAYING OPTIONS</p>
+                     <h2>Shape your sound</h2>
+                     <p class="card-description">Layer octaves, sustain your notes, or connect a MIDI keyboard.</p>
+                     <div class="master-panel">
+                        <div class="switch-group">
+                           <span class="toggle-label">Sub-octave</span>
+                           <label class="switch" aria-label="Enable sub-octave">
+                              <input type="checkbox" id="sub-oct-toggle">
+                              <span class="slider-pump"></span>
+                           </label>
+                        </div>
+                        <div class="switch-group">
+                           <span class="toggle-label">Coupler</span>
+                           <label class="switch" aria-label="Enable octave coupler">
+                              <input type="checkbox" id="coupler-toggle">
+                              <span class="slider-pump"></span>
+                           </label>
+                        </div>
+                        <button class="switch-group hold-control" id="hold-btn" type="button" aria-label="Toggle note hold">
+                           <span class="toggle-label">Hold notes</span>
+                        </button>
+                        <div class="switch-group" id="midi-control-group">
+                           <label for="midi-select" class="midi-label" id="midi-trigger">MIDI input</label>
+                           <select id="midi-select" aria-label="Choose MIDI input">
+                              <option value="">OFF</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="keyboard-shortcut">
+                        <span class="material-symbols-outlined" aria-hidden="true">keyboard</span>
+                        <span>Play notes with your computer keyboard</span>
+                     </div>
+                  </section>
+               </aside>
+            </div>
+
+            <section class="controls-guide surface-card" aria-labelledby="controls-guide-title">
+               <div class="guide-heading">
+                  <div>
+                     <p class="eyebrow">QUICK REFERENCE</p>
+                     <h2 id="controls-guide-title">Harmonium controls</h2>
+                  </div>
+                  <span class="guide-heading-icon material-symbols-outlined" aria-hidden="true">keyboard</span>
+               </div>
+               <div class="guide-grid">
+                  <section class="guide-section" aria-labelledby="guide-keyboard-title">
+                     <h3 id="guide-keyboard-title"><span class="material-symbols-outlined" aria-hidden="true">piano</span>Play notes</h3>
+                     <p>Click an on-screen key, play with a MIDI keyboard, or use these computer keys:</p>
+                     <div class="key-map">
+                        <div class="key-map-row"><span class="key-map-label">Lower range</span><span><kbd>A</kbd> <kbd>W</kbd> <kbd>S</kbd> <kbd>E</kbd> <kbd>D</kbd> <kbd>F</kbd> <kbd>T</kbd> <kbd>G</kbd> <kbd>Y</kbd> <kbd>H</kbd> <kbd>U</kbd> <kbd>J</kbd></span></div>
+                        <div class="key-map-row"><span class="key-map-label">Upper range</span><span><kbd>K</kbd> <kbd>O</kbd> <kbd>L</kbd> <kbd>P</kbd> <kbd>;</kbd> <kbd>'</kbd></span></div>
+                     </div>
+                     <p class="guide-note">Keys follow chromatic order: white-note keys alternate with the in-between notes. Click an on-screen key or play with a MIDI keyboard as well.</p>
+                     <p class="guide-note">Right-click and drag the on-screen keyboard to scroll across its full range.</p>
+                  </section>
+
+                  <section class="guide-section" aria-labelledby="guide-raga-title">
+                     <h3 id="guide-raga-title"><span class="material-symbols-outlined" aria-hidden="true">music_note</span>Raga &amp; pitch</h3>
+                     <dl class="guide-list">
+                        <div><dt>Choose a raga</dt><dd>Use the left and right arrows beside its name.</dd></div>
+                        <div><dt>Filter notes</dt><dd>Click the raga name to restrict play to its notes; click again to turn filtering off.</dd></div>
+                        <div><dt>Change notation</dt><dd>Switch between Western note names and Indian Sargam.</dd></div>
+                        <div><dt>Change octave</dt><dd>Select Low, Middle, or High to move the keyboard range.</dd></div>
+                        <div><dt>Transpose</dt><dd>Use − or + to shift pitch by semitones.</dd></div>
+                     </dl>
+                  </section>
+
+                  <section class="guide-section" aria-labelledby="guide-sound-title">
+                     <h3 id="guide-sound-title"><span class="material-symbols-outlined" aria-hidden="true">tune</span>Shape your sound</h3>
+                     <dl class="guide-list">
+                        <div><dt>Manual bellows</dt><dd>Turn off Auto bellows, then press Spacebar to pump air while playing.</dd></div>
+                        <div><dt>Hold notes</dt><dd>Hold Shift while playing, or turn on Hold notes to sustain notes.</dd></div>
+                        <div><dt>Sub-octave &amp; Coupler</dt><dd>Add a lower or upper octave to the notes you play.</dd></div>
+                        <div><dt>Sound settings</dt><dd>Adjust Volume, Sustain, Chorus, and Reverb to taste.</dd></div>
+                        <div><dt>MIDI input</dt><dd>Select a connected MIDI device from MIDI input.</dd></div>
+                     </dl>
+                  </section>
+               </div>
+            </section>
+         </main>
+
+         <footer class="site-footer">
+            <span>Sruthi · Explore the Soul of Carnatic Music</span>
+            <a href="../instruments_sruthi/code.html">Back to instruments</a>
+         </footer>
+      </div>
+
+      <script type="importmap">
+         {
+            "imports": {
+               "spessasynth_core": "https://unpkg.com/spessasynth_core@4.3.0/dist/index.js"
+            }
+         }
+      </script>
+      <script type="module" src="main.js"></script>
+   </body>
+</html>

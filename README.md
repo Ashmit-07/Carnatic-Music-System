@@ -1,97 +1,43 @@
 # Sruthi — Carnatic Music System
 
-This project is being built as a simple website with three main areas:
+Sruthi is a set of static website mockups for exploring Carnatic music, with a standalone browser-based Harmonium Companion. It does not include a React application or backend.
 
-1. Learning
-2. Compose
-3. Instruments
+## Pages
 
-The current version is an early working prototype. The learning section is intentionally left empty for now, and the compose/instruments sections are still in the research and design phase.
+- `home_sruthi/code.html` — home page with an overview of the site and its instruments.
+- `learn_sruthi/code.html` — learning page mockup.
+- `compose_sruthi/code.html` — composition workspace mockup.
+- `instruments_sruthi/code.html` — instrument selection and interaction mockup.
+- `harmonium_companion/index.html` — the interactive Harmonium Companion.
 
-Important: Update this file after each feature added.
+The instruments planned for the project are:
 
-## What is done so far
+- **Tanpura** — a drone instrument; the mockup includes four interactive string controls.
+- **Harmonium** — a reed keyboard instrument.
+- **Mridangam** — a percussion instrument.
 
-### Frontend
-- Converted the original mock/static website into a beginner-friendly React + Tailwind frontend.
-- Kept the same visual style and layout as closely as possible.
-- Created a simple page-based navigation system:
-  - Home
-  - Learn
-  - Compose
-  - Instruments
-- Added working interactive elements for the main buttons and state changes.
-- Kept the project structure simple and easy to understand.
+Tanpura and Mridangam currently have visual mockups only. The Harmonium Companion is a working browser-based instrument with keyboard and MIDI input, ragas, bellows, and audio effects. Open it from the Harmonium card on the Instruments page.
 
-### Backend
-- Set up a minimal Flask backend.
-- Added a simple SQLite database layer for saved compositions.
-- Added API endpoints for basic functionality:
-  - health/status check
-  - save and load compositions
-- Added CORS support for local React-to-Flask development.
+## Run locally
 
-### Project files
-- frontend/
-  - src/App.jsx
-  - src/main.jsx
-  - src/pages/Home.jsx
-  - src/pages/Learn.jsx
-  - src/pages/Compose.jsx
-  - src/pages/Instruments.jsx
-  - src/components/Header.jsx
-  - src/components/Footer.jsx
-- backend/
-  - app.py
-  - database.py
-  - requirements.txt
-- run guide and docs
-  - RUN_GUIDE.md
-  - README.md
+No package installation or build step is required. Open any page's `code.html` file in a browser, or serve the repository root with Python:
 
-## What is still to be done
+```powershell
+python -m http.server 8000
+```
 
-### 1. Learning section
-- This part remains empty for now as requested.
-- Later, we will add structured lesson cards, lesson pages, and progression tracking.
-- Lessons will be added one by one after the core product structure is stable.
+Then visit:
 
-### 2. Compose section
-- This area is only a basic prototype for now.
-- The actual music-sheet composition workflow still needs deeper research.
-- Future work may include:
-  - note selection and melody building
-  - raga/tala logic
-  - saving richer composition data
-  - timeline or notation-inspired layout
+- Home: http://localhost:8000/home_sruthi/code.html
+- Learn: http://localhost:8000/learn_sruthi/code.html
+- Compose: http://localhost:8000/compose_sruthi/code.html
+- Instruments: http://localhost:8000/instruments_sruthi/code.html
+- Harmonium Companion: http://localhost:8000/harmonium_companion/index.html
 
-### 3. Instruments section
-- This section is also a placeholder for future research.
-- Later, we will define which instruments are included and what behavior each one should have.
-- Possible future work:
-  - instrument-specific controls
-  - audio playback or simulation
-  - visual instrument interaction
+The mockups load Tailwind CSS and fonts from external CDNs, so those resources require an internet connection. The Harmonium Companion also loads its synthesis engine from unpkg and fetches its bundled soundfont, so use a local web server and an internet connection for playback.
 
-### 4. Cleanup and improvements
-- Review the app for polish and consistency.
-- Improve the empty states and placeholder screens.
-- Add more realistic functionality once the product direction is clearer.
-- Improve documentation as features are added.
+## Project status
 
-## Current status
+These pages are design prototypes rather than a fully connected application. Lessons, composition, and Tanpura/Mridangam interactions may be incomplete or visual-only. `sruthi_shadow/DESIGN.md` describes the visual direction.
 
-This is still a foundation project, not a final product. The core app structure, UI conversion, and basic backend connection are working, but the major feature areas (lessons, real composition features, instruments) are intentionally left for future development.
-
-## Local startup
-
-For the setup and run instructions, see [RUN_GUIDE.md](RUN_GUIDE.md).
-
-## Notes
-- The frontend and backend are kept separate for clarity.
-- SQLite is used only where needed, mainly for saved compositions.
-- The project intentionally avoids unnecessary complexity and extra libraries.
-
-## Update policy
-
-Update this file after each feature added.
+The Harmonium Companion is included under its MIT license; see `harmonium_companion/LICENSE` and `harmonium_companion/README.md` for attribution and usage notes.
