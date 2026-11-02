@@ -1,5 +1,7 @@
 # Sruthi — Carnatic Music System
 
+[![Visit Website](https://img.shields.io/badge/Visit%20Website-Sruthi-775a19?style=for-the-badge)](https://ashmit-07.github.io/Carnatic-Music-System/)
+
 Sruthi is a set of static website mockups for exploring Carnatic music, with a standalone browser-based Harmonium Companion. It does not include a React application or backend.
 
 ## Pages
