@@ -28,7 +28,8 @@ python -m http.server 8000
 
 Then visit:
 
-- Home: http://localhost:8000/home_sruthi/code.html
+- Home: http://localhost:8000/ (served by the root `index.html`)
+- Home mockup source: http://localhost:8000/home_sruthi/code.html
 - Learn: http://localhost:8000/learn_sruthi/code.html
 - Compose: http://localhost:8000/compose_sruthi/code.html
 - Instruments: http://localhost:8000/instruments_sruthi/code.html
